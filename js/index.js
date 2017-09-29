@@ -20,12 +20,14 @@
         category: 34,
         template : document.querySelector('.template')
     }
-    const api = `${app.url}key=${app.key}&sign=${app.sign}&photo-host=public&country=${app.country}&city=${app.city}&category=${app.category}`;
-    document.querySelector('#title').textContent = `${app.city} Tech Meetup`
+    const api = `https://cors-anywhere.herokuapp.com/${app.url}key=${app.key}&sign=${app.sign}&photo-host=public&country=${app.country}&city=${app.city}&category=${app.category}`;
+    // const api = `${app.url}key=${app.key}&sign=${app.sign}&photo-host=public&country=${app.country}&city=${app.city}&category=${app.category}`;
+    document.querySelector('#title').textContent = `${app.city} Tech Meetup`;
 
     fetch(api)
     .then(response => response.json())
     .then(function(response){
+        console.log(response);
         document.querySelector('.loader').classList.remove('loader');
         showEvent(response.results);
     }).catch(function(err){
