@@ -21,6 +21,7 @@
         template : document.querySelector('.template')
     }
     const api = `${app.url}key=${app.key}&sign=${app.sign}&photo-host=public&country=${app.country}&city=${app.city}&category=${app.category}`;
+    document.querySelector('#title').textContent = `${app.city} Tech Meetup`
 
     fetch(api)
     .then(response => response.json())
