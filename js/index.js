@@ -16,7 +16,7 @@
         sign: true,
         page:   30,
         country: 'ng',
-        city: 'Lagos',
+        city: 'Abuja',
         category: 34,
         template : document.querySelector('.template')
     }
