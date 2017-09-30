@@ -70,5 +70,13 @@
         return template;
     }
 
+    if('ServiceWorker' in navigator){
+        navigator.serviceWorker
+            .register('../service-worker.js')
+            .then('register', () => {
+                console.log("Service is registered")
+            })
+    }
+
 })()
 
